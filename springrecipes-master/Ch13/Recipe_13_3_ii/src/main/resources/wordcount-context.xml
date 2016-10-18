@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hadoop="http://www.springframework.org/schema/hadoop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
+
+        <hadoop:configuration file-system-uri="hdfs://localhost:9000/" />
+
+        <hadoop:job id="wordCountJob"
+                    mapper="com.apress.springrecipes.hadoop.TokenizerMapper"
+                    reducer="com.apress.springrecipes.hadoop.IntSumReducer"
+                    jar-by-class="com.apress.springrecipes.hadoop.WordCountSpring"
+                    input-path="/hadoop-recipe/input"
+                    output-path="/hadoop-recipe/output" />
+
+        <hadoop:job-runner job-ref="wordCountJob" run-at-startup="true" />
+
+</beans>

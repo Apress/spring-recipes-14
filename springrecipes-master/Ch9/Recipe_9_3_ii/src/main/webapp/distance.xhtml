@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xml:lang="en" lang="en">
+<h:head>
+    <title>City Distance</title>
+</h:head>
+
+<h:body>
+<f:view>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="srcCity">Source City</h:outputLabel>
+            <h:inputText id="srcCity" value="#{distanceBean.srcCity}"/>
+            <h:outputLabel for="destCity">Destination City</h:outputLabel>
+            <h:inputText id="destCity" value="#{distanceBean.destCity}"/>
+            <h:outputLabel>Distance</h:outputLabel>
+            <h:outputText value="#{distanceBean.distance}"/>
+            <h:commandButton value="Find" action="#{distanceBean.find}"/>
+        </h:panelGrid>
+    </h:form>
+</f:view>
+</h:body>
+</html>

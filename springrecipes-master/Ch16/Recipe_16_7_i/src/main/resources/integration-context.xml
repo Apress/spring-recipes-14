@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.springframework.org/schema/integration"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:file="http://www.springframework.org/schema/integration/file"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
+
+    <context:annotation-config />
+
+    <poller id="poller" default="true" fixed-rate="1000" />
+
+    <beans:bean id="fileSplitter"
+                class="com.apress.springrecipes.springintegration.CustomerBatchFileSplitter"/>
+    <beans:bean id="customerDeletionServiceActivator"
+                class="com.apress.springrecipes.springintegration.CustomerDeletionServiceActivator"/>
+    <channel id="customerBatchChannel"/>
+    <channel id="customerIdChannel"/>
+
+    <file:inbound-channel-adapter
+            directory="file:${user.home}/customerstoremove/new/"
+            channel="customerBatchChannel"  filename-pattern="customerstoremove-*.txt"/>
+
+    <splitter input-channel="customerBatchChannel"
+              ref="fileSplitter" output-channel="customerIdChannel" />
+
+    <service-activator input-channel="customerIdChannel"
+                       ref="customerDeletionServiceActivator"/>
+
+
+</beans:beans>

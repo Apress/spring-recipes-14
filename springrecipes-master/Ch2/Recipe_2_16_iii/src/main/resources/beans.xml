@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <bean id="dateEditor"
+        class="org.springframework.beans.propertyeditors.CustomDateEditor">
+        <constructor-arg>
+            <bean class="java.text.SimpleDateFormat">
+                <constructor-arg value="yyyy-MM-dd" />
+            </bean>
+        </constructor-arg>
+        <constructor-arg value="true" />
+    </bean>
+
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date">
+                    <ref local="dateEditor" />
+                </entry>
+                <entry key="com.apress.springrecipes.shop.Product">
+                    <bean class="com.apress.springrecipes.shop.ProductEditor" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="productRanking"
+        class="com.apress.springrecipes.shop.ProductRanking">
+        <property name="bestSeller">
+            <value>com.apress.springrecipes.shop.Disc,CD-RW,1.5</value>
+        </property>
+        <property name="fromDate" value="2013-12-01" />
+        <property name="toDate" value="2013-12-31" />
+    </bean>
+
+    <util:property-path id="bestSeller" path="productRanking.bestSeller" />
+</beans>

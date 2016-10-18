@@ -1,0 +1,284 @@
+description = 'Spring Recipes :: Chapter 17 :: Spring Testing'
+
+// Define project
+project(':Ch17:Recipe_17_1_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_1_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_1_iii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_2_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_2_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_2_iii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_2_iv') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_3_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_4_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_4_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_4_iii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_5_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_5_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_5_iii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_6_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_6_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_6_iii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_7_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_7_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_8_i') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End
+
+// Define project
+project(':Ch17:Recipe_17_8_ii') {
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+
+        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+    }
+} // End

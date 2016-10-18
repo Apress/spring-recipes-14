@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
+
+    <mvc:interceptors>
+        <bean class="com.apress.springrecipes.court.web.MeasurementInterceptor" />
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="language" />
+        </bean>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/reservationSummary*" />
+            <bean class="com.apress.springrecipes.court.web.ExtensionInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html" />
+                <entry key="pdf" value="application/pdf" />
+                <entry key="xls" value="application/vnd.ms-excel" />
+                <entry key="xml" value="application/xml" />
+                <entry key="json" value="application/json" />
+            </map>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="contentNegotiationManager" ref="contentNegotiationManager" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="order" value="0" />
+        <property name="basename" value="court-views" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="1" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" >
+        <property name="cookieName" value="language" />
+        <property name="cookieMaxAge" value="3600" />
+        <property name="defaultLocale" value="en" />
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
+    </bean>
+
+</beans>

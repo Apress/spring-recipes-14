@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="messageBoardService"
+          class="com.apress.springrecipes.board.service.MessageBoardServiceImpl" />
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+                  value="org.apache.derby.jdbc.ClientDriver" />
+        <property name="url"
+                  value="jdbc:derby://localhost:1527/board;create=true" />
+        <property name="username" value="app" />
+        <property name="password" value="app" />
+    </bean>
+
+
+</beans>

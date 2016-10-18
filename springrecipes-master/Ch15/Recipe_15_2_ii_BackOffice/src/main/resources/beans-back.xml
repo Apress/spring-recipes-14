@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="connectionFactory"
+        class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616" />
+    </bean>
+
+    <bean id="mailMessageConverter"
+        class="com.apress.springrecipes.post.MailMessageConverter" />
+
+    <bean id="jmsTemplate"
+        class="org.springframework.jms.core.JmsTemplate">
+        <property name="receiveTimeout" value ="10000"/>
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="defaultDestinationName" value="mail.queue" />
+        <property name="messageConverter" ref="mailMessageConverter" />
+    </bean>
+
+    <bean id="backOffice"
+        class="com.apress.springrecipes.post.BackOfficeImpl">
+        <property name="jmsTemplate" ref="jmsTemplate" />
+    </bean>
+
+</beans>

@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <aop:config>
+        <aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
+	  <aop:pointcut id="loggingOperation" expression="within(com.apress.springrecipes.calculator.ArithmeticCalculator+) || within(com.apress.springrecipes.calculator.UnitCalculator+)" />
+        <aop:before pointcut-ref="loggingOperation"
+            method="logBefore" />
+
+        <aop:after pointcut-ref="loggingOperation"
+            method="logAfter" />
+
+        <aop:after-returning pointcut-ref="loggingOperation"
+            returning="result" method="logAfterReturning" />
+
+        <aop:after-throwing pointcut-ref="loggingOperation"
+            throwing="e" method="logAfterThrowing" />
+
+        <aop:around pointcut-ref="loggingOperation"
+            method="logAround" />
+
+        </aop:aspect>
+
+    </aop:config>
+
+    <bean id="calculatorLoggingAspect"
+        class="com.apress.springrecipes.calculator.CalculatorLoggingAspect" />
+
+    <bean id="arithmeticCalculator" 
+	class="com.apress.springrecipes.calculator.ArithmeticCalculatorImpl" />
+
+    <bean id="unitCalculator" 
+	class="com.apress.springrecipes.calculator.UnitCalculatorImpl" />
+</beans>

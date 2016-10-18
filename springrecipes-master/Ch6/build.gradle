@@ -1,0 +1,75 @@
+description='Spring Recipes :: Chapter 6 :: Spring Social'
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='social.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+        compile group: 'org.springframework.social', name: 'spring-social-core', version:"$springSocialVersion"
+        compile group: 'org.springframework.social', name: 'spring-social-config', version:"$springSocialVersion"
+        compile group: 'org.springframework.social', name: 'spring-social-web', version:"$springSocialVersion"
+        compile group: 'org.springframework.social', name: 'spring-social-twitter', version: "$springSocialTwitterVersion"
+        compile group: 'org.springframework.social', name: 'spring-social-facebook', version: "$springSocialFacebookVersion"
+
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.1'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.1'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+    }
+}
+
+project(':Ch6:Recipe_6_6_i') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+
+        compile group: 'org.springframework.security', name: 'spring-security-crypto', version: "$springSecurityVersion"
+
+        compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$dbcpVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+    }
+
+}
+
+project(':Ch6:Recipe_6_7_i') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+
+        compile group: 'org.springframework.social', name: 'spring-social-security', version:"$springSocialVersion"
+
+        compile group: 'org.springframework.security', name: 'spring-security-config', version: "$springSecurityVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-crypto', version: "$springSecurityVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-web', version: "$springSecurityVersion"
+
+        compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$dbcpVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+    }
+}
+project(':Ch6:Recipe_6_7_ii') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+
+        compile group: 'org.springframework.social', name: 'spring-social-security', version:"$springSocialVersion"
+
+        compile group: 'org.springframework.security', name: 'spring-security-config', version: "$springSecurityVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-crypto', version: "$springSecurityVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-web', version: "$springSecurityVersion"
+
+        compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$dbcpVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+
+    }
+}

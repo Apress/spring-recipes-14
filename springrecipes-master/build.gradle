@@ -1,0 +1,156 @@
+description='Spring Recipes'
+
+apply plugin: 'base'
+apply plugin: 'project-report'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+
+allprojects {
+    group = 'com.apress.springrecipes'
+    version = '3.0.0'
+
+    // Define repositorie to get dependencies
+    repositories {
+        mavenCentral()
+        // Public Spring artifacts
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/libs-release"}
+    }
+
+}
+
+subprojects { subproject ->
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'project-report'
+
+    ext {
+        springVersion               = '4.0.8.RELEASE'
+        springAmqpVersion           = '1.4.1.RELEASE'
+        springBatchVersion          = '3.0.2.RELEASE'
+        springCFVersion             = '1.1.0.RELEASE'
+        springDataGemfireVersion    = '1.5.1.RELEASE'
+        springDataJpaVersion        = '1.7.1.RELEASE'
+        springDataMongodbVersion    = '1.6.1.RELEASE'
+        springDataNeo4jVersion      = '3.2.1.RELEASE'
+        springDataRedisVersion      = '1.4.1.RELEASE'
+        springHadoopVersion         = '2.0.4.RELEASE'
+        springIntegrationVersion    = '4.0.4.RELEASE'
+        springLdapVersion           = '2.0.2.RELEASE'
+        springMobileVersion         = '1.1.3.RELEASE'
+        springSecurityVersion       = '3.2.5.RELEASE'
+        springSocialVersion         = '1.1.0.RELEASE'
+        springSocialFacebookVersion = '1.1.1.RELEASE'
+        springSocialTwitterVersion  = '1.1.0.RELEASE'
+        springWebFlowVersion        = '2.4.1.RELEASE'
+        springWsVersion             = '2.2.0.RELEASE'
+        activemqVersion             = '5.10.0'
+        aspectjVersion              = '1.8.4'
+        apacheCxfVersion            = '2.7.5'
+        castorVersion               = '1.3.3'
+        commonsLangVersion          = '2.6'
+        dbcpVersion                 = '2.0.1'
+        derbyVersion                = '10.10.2.0'
+        dwrVersion                  = '2.0.10'
+        ehCacheVersion              = '2.8.3'
+        gemfireVersion              = '8.0.0'
+        groovyVersion               = '2.3.3'
+        hadoopVersion               = '2.5.1'
+        hessianVersion              = '4.0.38'
+        hibernate4Version           = '4.3.7.Final'
+        hibValVersion               = '5.1.3.Final'
+        hsqldbVersion               = '2.3.2'
+        itextVersion                = '4.2.1'
+        jackson2Version             = '2.4.3'
+        javaMailVersion             = '1.4.7'
+        jedisVersion                = '2.6.0'
+        jodaVersion                 = '2.5'
+        jsfVersion                  = '2.2.7'
+        junitVersion                = '4.12'
+        logbackVersion              = '1.1.2'
+        mockitoVersion              = '1.9.5'
+        neo4jVersion                = '2.1.5'
+        poiVersion                  = '3.10.1'
+        quartzVersion               = '2.2.1'
+        romeVersion                 = '1.0'
+        servletApiVersion           = '3.0.1'
+        slf4jVersion                = '1.7.9'
+        testngVersion               = '6.8.13'
+        wsdl4jVersion               = '1.6.3'
+    }
+
+
+	compileJava.options*.compilerArgs = [
+		"-Xlint:serial", "-Xlint:varargs", "-Xlint:cast", "-Xlint:classfile",
+		"-Xlint:dep-ann", "-Xlint:divzero", "-Xlint:empty", "-Xlint:finally",
+		"-Xlint:overrides", "-Xlint:path", "-Xlint:processing", "-Xlint:static",
+		"-Xlint:try", "-Xlint:fallthrough", "-Xlint:rawtypes", "-Xlint:deprecation",
+		"-Xlint:unchecked", "-Xlint:-options"
+	]
+
+	compileTestJava.options*.compilerArgs = [
+		"-Xlint:serial", "-Xlint:varargs", "-Xlint:cast", "-Xlint:classfile",
+		"-Xlint:dep-ann", "-Xlint:divzero", "-Xlint:empty", "-Xlint:finally",
+		"-Xlint:overrides", "-Xlint:path", "-Xlint:processing", "-Xlint:static",
+		"-Xlint:try", "-Xlint:-fallthrough", "-Xlint:-rawtypes", "-Xlint:-deprecation",
+		"-Xlint:-unchecked", "-Xlint:-options"]
+
+	compileJava {
+		sourceCompatibility=1.7
+		targetCompatibility=1.7
+	}
+
+	compileTestJava {
+		sourceCompatibility=1.7
+		targetCompatibility=1.7
+	}
+
+    eclipse {
+        project {
+            natures += 'org.springframework.ide.eclipse.core.springnature'
+        }
+    }
+
+	configurations {
+		// We want to use SLF4J for logging, ban commons-logging
+		all*.exclude group: 'commons-logging', module: 'commons-logging'
+	
+		provided
+	}
+  
+	dependencies {
+		compile("org.slf4j:slf4j-api:${slf4jVersion}")
+		compile("org.slf4j:jcl-over-slf4j:${slf4jVersion}")
+		compile("ch.qos.logback:logback-classic:${logbackVersion}")
+        compile('org.apache.commons:commons-lang3:3.3')
+		//
+		provided group:'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+		// Add dependencies for testing (these will only be used for the testing phase)
+		testCompile("junit:junit:${junitVersion}")
+		testCompile("org.hamcrest:hamcrest-all:1.3")
+		testCompile("org.mockito:mockito-core:1.9.5")
+		testCompile("org.springframework:spring-test:$springVersion")
+	}
+	
+	//Include provided for compilation
+	sourceSets.main.compileClasspath += configurations.provided
+	
+	task copyDependenciesToLibDir( type: Copy ) {
+		into "$buildDir/libs/lib"
+		from configurations.runtime
+	}
+
+    jar {
+        // Copy jar dependencies and add to Class-Path.
+        dependsOn copyDependenciesToLibDir
+        def deps = fileTree(dir: "$buildDir/libs/lib", include: '*.jar');
+        manifest.attributes("Class-Path": deps.files.collect {'lib/'+it.name}.join(' '))
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}

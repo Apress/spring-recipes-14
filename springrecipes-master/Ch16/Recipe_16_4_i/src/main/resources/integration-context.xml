@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.springframework.org/schema/integration"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="
+                http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd"
+             xmlns:file="http://www.springframework.org/schema/integration/file">
+
+    <context:annotation-config/>
+
+    <beans:bean id="inboundHelloWorldJMSPingServiceActivator"
+                class="com.apress.springrecipes.springintegration.InboundHelloWorldFileMessageProcessor"/>
+
+    <channel id="inboundFileChannel"/>
+
+    <file:inbound-channel-adapter directory="${user.home}/inboundFiles/new/"
+                                  channel="inboundFileChannel"
+                                  filename-pattern="^new.*csv">
+        <poller default="true" fixed-rate="10" time-unit="SECONDS" />
+    </file:inbound-channel-adapter>
+
+
+    <service-activator input-channel="inboundFileChannel" ref="inboundHelloWorldJMSPingServiceActivator"/>
+
+</beans:beans>

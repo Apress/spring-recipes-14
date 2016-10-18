@@ -1,0 +1,54 @@
+package com.apress.springrecipes.course.config;
+
+import com.apress.springrecipes.course.CourseDao;
+import com.apress.springrecipes.course.JpaCourseDao;
+import org.apache.derby.jdbc.ClientDriver;
+import org.hibernate.dialect.DerbyTenSevenDialect;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+
+import javax.sql.DataSource;
+
+/**
+ * Created by marten on 28-05-14.
+ */
+@Configuration
+public class CourseConfiguration {
+
+    @Bean
+    public CourseDao courseDao() {
+        return new JpaCourseDao(entityManagerFactory().getObject());
+    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+        emf.setDataSource(dataSource());
+        emf.setJpaVendorAdapter(jpaVendorAdapter());
+        return emf;
+    }
+
+    private JpaVendorAdapter jpaVendorAdapter() {
+        HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
+        jpaVendorAdapter.setShowSql(true);
+        jpaVendorAdapter.setGenerateDdl(true);
+        jpaVendorAdapter.setDatabasePlatform(DerbyTenSevenDialect.class.getName());
+        return jpaVendorAdapter;
+    }
+
+
+    @Bean
+    public DataSource dataSource() {
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setDriverClass(ClientDriver.class);
+        dataSource.setUrl("jdbc:derby://localhost:1527/course;create=true");
+        dataSource.setUsername("app");
+        dataSource.setPassword("app");
+        return dataSource;
+
+    }
+}

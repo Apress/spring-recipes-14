@@ -1,0 +1,44 @@
+description = 'Spring Recipes :: Appendix B :: Caching'
+
+subprojects { subproject ->
+
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
+        compile group: 'net.sf.ehcache', name: 'ehcache', version: "$ehCacheVersion"
+    }
+
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.caching.Main")
+    }
+}
+
+project(':Appendix_B:Recipe_B_3_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aspects', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-instrument', version:"$springVersion"
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjrt', version: "$aspectjVersion"
+    }
+} // End
+
+project(':Appendix_B:Recipe_B_6_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.gemstone.gemfire', name: 'gemfire', version:"$gemfireVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-gemfire', version: "$springDataGemfireVersion"
+    }
+} // End
+
+project(':Appendix_B:Recipe_B_6_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.gemstone.gemfire', name: 'gemfire', version:"$gemfireVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-gemfire', version: "$springDataGemfireVersion"
+    }
+} // End

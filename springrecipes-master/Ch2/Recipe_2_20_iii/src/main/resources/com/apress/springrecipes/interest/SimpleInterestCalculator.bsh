@@ -1,0 +1,10 @@
+import com.apress.springrecipes.interest.RateCalculator;
+RateCalculator rateCalculator;
+
+void setRateCalculator(RateCalculator aRateCalculator) {
+    rateCalculator = aRateCalculator;
+}
+
+double calculate(double amount, double year) {
+    return amount * year * rateCalculator.getAnnualRate();
+}

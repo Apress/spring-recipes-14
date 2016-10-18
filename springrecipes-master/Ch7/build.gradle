@@ -1,0 +1,104 @@
+description='Spring Recipes :: Chapter 7 :: Spring Security'
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    war {
+        archiveName='board.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-web', version:"$springSecurityVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-config', version:"$springSecurityVersion"
+
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.1'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.1'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+}
+
+
+project(':Ch7:Recipe_7_3_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_3_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-ldap', version:"$springSecurityVersion"
+        compile group: 'org.springframework.ldap', name: 'spring-ldap-core', version: "$springLdapVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'net.sf.ehcache', name:'ehcache', version: "$ehCacheVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_4_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_4_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_4_iii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_4_iv') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_4_v') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_6_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_7_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+        compile group: 'net.sf.ehcache', name:'ehcache', version: "$ehCacheVersion"
+    }
+}
+
+project(':Ch7:Recipe_7_7_ii') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version:"$springSecurityVersion"
+        compile group: 'net.sf.ehcache', name:'ehcache', version: "$ehCacheVersion"
+    }
+}

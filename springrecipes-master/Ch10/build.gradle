@@ -1,0 +1,275 @@
+description='Spring Recipes :: Chapter 10 :: Spring Data Access'
+
+subprojects { subproject ->
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+        compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$dbcpVersion"
+    }
+
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.vehicle.Main")
+    }
+}
+
+project(':Ch10:Recipe_10_6_i') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_6_ii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_6_iii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_6_iv') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_i') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_ii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_iii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_iv') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_v') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_7_vi') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_8_i') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_8_ii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_9_i') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_9_ii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_9_iii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_10_i') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_10_ii') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project
+
+project(':Ch10:Recipe_10_11') {
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm', version:"$springVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-jpa', version:"$springDataJpaVersion"
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:"$hibernate4Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.course.Main")
+    }
+} // End 15_1_i project

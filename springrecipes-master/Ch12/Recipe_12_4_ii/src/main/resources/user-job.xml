@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+        xmlns="http://www.springframework.org/schema/batch"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder ignore-unresolvable="true" />
+
+    <beans:bean
+            id="csvFileReader"
+            class="org.springframework.batch.item.file.FlatFileItemReader"
+            p:resource="file:${user.home}/batches/registrations.csv">
+        <beans:property
+                name="lineMapper">
+            <beans:bean
+                    class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <beans:property
+                        name="lineTokenizer">
+                    <beans:bean
+                            class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer"
+                            p:delimiter=","
+                            p:names="firstName,lastName,company,address,city,state,zip,county,url,phoneNumber,fax"/>
+                </beans:property>
+                <beans:property
+                        name="fieldSetMapper">
+                    <beans:bean
+                            class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper"
+                            p:targetType="com.apress.springrecipes.springbatch.UserRegistration"/>
+                </beans:property>
+            </beans:bean>
+        </beans:property>
+    </beans:bean>
+
+    <beans:bean id="userRegistrationValidationProcessor" class="com.apress.springrecipes.springbatch.UserRegistrationValidationItemProcessor" />
+
+    <beans:bean
+            id="jdbcItemWriter"
+            class="org.springframework.batch.item.database.JdbcBatchItemWriter"
+            p:assertUpdates="true"
+            p:dataSource-ref="dataSource">
+
+        <beans:property
+                name="sql">
+            <beans:value>
+                <![CDATA[
+ 				insert into USER_REGISTRATION( 						 
+							FIRST_NAME, LAST_NAME, COMPANY, ADDRESS, 
+							CITY, STATE, ZIP, COUNTY, 
+							URL, PHONE_NUMBER, FAX )
+				values ( 								 
+							:firstName, :lastName, :company, :address, 
+							:city , :state, :zip, :county, 
+							:url, :phoneNumber, :fax  )
+			]]>
+            </beans:value>
+
+
+        </beans:property>
+        <beans:property
+                name="itemSqlParameterSourceProvider">
+            <beans:bean
+                    class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider"/>
+        </beans:property>
+    </beans:bean>
+
+    <job
+            job-repository="jobRepository"
+            id="insertIntoDbFromCsvJob">
+        <step
+                id="step1">
+            <tasklet>
+                <chunk
+                        reader="csvFileReader"
+                        processor="userRegistrationValidationProcessor"
+                        writer="jdbcItemWriter"
+                        commit-interval="5"/>
+            </tasklet>
+
+        </step>
+    </job>
+
+
+</beans:beans>

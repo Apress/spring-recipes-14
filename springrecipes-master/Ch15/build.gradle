@@ -1,0 +1,86 @@
+description='Spring Recipes :: Chapter 15 :: Spring Messaging'
+
+subprojects { subproject ->
+
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-expression', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-jms', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-tx', version:"$springVersion"
+
+        compile group: 'javax.jms', name: 'jms-api', version:'1.1-rev-1'
+        compile group: 'org.apache.activemq', name: 'activemq-client',version:"$activemqVersion"
+        compile group: 'org.apache.activemq', name: 'activemq-broker',version:"$activemqVersion"
+    }
+}
+
+configure(subprojects.findAll { p -> p.name.contains('Front') } ) {
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.post.FrontDeskMain")
+    }
+
+}
+
+configure(subprojects.findAll { p -> p.name.contains('Back') }) {
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.post.BackOfficeMain")
+    }
+
+}
+
+
+project(':Ch15:Recipe_15_3_FrontDesk') {   
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-aop', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'aopalliance', name: 'aopalliance', version:'1.0'           
+   }
+} // End 16_3_FrontDesk project
+
+
+// Define 16_3_BackOffice project
+project(':Ch15:Recipe_15_3_BackOffice') {   
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-aop', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'aopalliance', name: 'aopalliance', version:'1.0'           
+   }
+} // End 16_3_BackOffice project
+
+
+
+
+
+// Define 16_5_BackOffice project
+project(':Ch15:Recipe_15_5_BackOffice') {   
+  dependencies {
+    compile group: 'org.apache.activemq', name: 'activemq-pool',version:"$activemqVersion"
+   }
+} // End 16_5_BackOffice project
+
+// Define 16_6_FrontDesk project
+project(':Ch15:Recipe_15_6_FrontDesk') {
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit', version: "$springAmqpVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.post.FrontDeskMain")
+    }
+} // End 16_5_FrontDesk project
+
+
+// Define 16_5_BackOffice project
+project(':Ch15:Recipe_15_6_BackOffice') {
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit', version: "$springAmqpVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+
+    }
+} // End 16_5_BackOffice project

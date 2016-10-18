@@ -1,0 +1,82 @@
+description = 'Spring Recipes :: Chapter 5 :: Spring REST'
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build', 'test', 'war'
+    war {
+        archiveName='court.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+
+        // Provided Dependencies
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+}
+
+// Define springweb project
+project(':Ch5:Recipe_5_2_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch5:Recipe_5_2_iii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch5:Recipe_5_3_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch5:Recipe_5_3_ii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define aditional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch5:Recipe_5_3_iii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch5:Recipe_5_4_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'rome', name: 'rome', version: "$romeVersion"
+    }
+} // End springweb

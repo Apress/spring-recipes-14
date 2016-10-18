@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sws="http://www.springframework.org/schema/web-services"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Scans and creates weatherServiceImpl bean with @Component annotation -->
+    <context:component-scan base-package="com.apress.springrecipes.weather"/>
+
+
+    <bean id="marshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+        <property name="mappingLocation" value="classpath:mapping.xml"/>
+    </bean>
+
+    <sws:annotation-driven marshaller="marshaller"/>
+
+    <sws:dynamic-wsdl id="temperature" portTypeName="Weather" locationUri="/">
+        <sws:xsd location="/WEB-INF/temperature.xsd"/>
+    </sws:dynamic-wsdl>
+
+</beans>

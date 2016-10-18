@@ -1,0 +1,134 @@
+description = 'Spring Recipes :: Chapter 16 :: Spring Integration'
+
+subprojects { subproject ->
+
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-messaging', version: "$springVersion"
+        compile group: 'org.springframework.integration', name: 'spring-integration-core', version: "$springIntegrationVersion"
+
+        // No activemq-all as that includes dependencies we don't want
+        compile group: 'org.apache.activemq', name: 'activemq-broker', version: "$activemqVersion"
+        compile group: 'org.apache.activemq', name: 'activemq-client', version: "$activemqVersion"
+    }
+}
+
+// Define project
+project(':Ch16:Recipe_16_2_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_2_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_3_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_3_iii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_4_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_5_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+
+// Define project
+project(':Ch16:Recipe_16_5_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_6_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_6_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_6_iii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_7_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+        compile group: 'commons-io', name: 'commons-io', version: "2.4"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_7_i') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+        compile group: 'commons-io', name: 'commons-io', version: "2.4"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_7_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+        compile group: 'commons-io', name: 'commons-io', version: "2.4"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_9') {
+    dependencies {
+        // IRC Client
+        compile group: 'org.springframework.integration', name: 'spring-integration-file', version: "$springIntegrationVersion"
+        compile group: 'org.springframework.batch', name: 'spring-batch-integration', version: "$springBatchVersion"
+    }
+} // End
+
+// Define project
+project(':Ch16:Recipe_16_10_ii') {
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: "$springIntegrationVersion"
+    }
+} // End

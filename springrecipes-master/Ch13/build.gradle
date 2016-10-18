@@ -1,0 +1,177 @@
+description='Spring Recipes :: Chapter 13 :: Spring NoSQL and BigData'
+
+subprojects { subproject ->
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-expression', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.nosql.Main")
+    }
+}
+
+project(':Ch13:Recipe_13_1_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb',version: "$springDataMongodbVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_1_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb',version: "$springDataMongodbVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_1_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb',version: "$springDataMongodbVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_1_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb',version: "$springDataMongodbVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_1_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-mongodb',version: "$springDataMongodbVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_2_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_2_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_2_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_2_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    }
+}
+
+project(':Ch13:Recipe_13_2_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+        compile group: 'org.springframework.data', name: 'spring-data-redis', version: "$springDataRedisVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_2_vi') {
+    // Define dependencies
+    dependencies {
+        compile group: 'redis.clients', name: 'jedis', version: "$jedisVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+        compile group: 'org.springframework.data', name: 'spring-data-redis', version: "$springDataRedisVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_3_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.apache.hadoop', name: 'hadoop-client', version: "$hadoopVersion"
+    }
+
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.hadoop.WordCount")
+    }
+}
+
+project(':Ch13:Recipe_13_3_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-hadoop', version: "$springHadoopVersion"
+        compile group: 'org.apache.hadoop', name: 'hadoop-client', version: "$hadoopVersion"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.hadoop.WordCountSpring")
+    }
+}
+
+project(':Ch13:Recipe_13_4_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_4_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_4_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_4_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j', version: "$springDataNeo4jVersion"
+        compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j-tx', version: "$springDataNeo4jVersion"
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+    }
+}
+
+project(':Ch13:Recipe_13_4_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j', version: "$springDataNeo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j-tx', version: "$springDataNeo4jVersion"
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+    }
+}
+
+project(':Ch13:Recipe_13_4_vi') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j', version: "$springDataNeo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j-tx', version: "$springDataNeo4jVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-neo4j-rest', version: "$springDataNeo4jVersion"
+        compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
+        compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+        compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.9'
+        compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.9'
+        compile group: 'javax.ws.rs', name: 'jsr311-api', version: '1.1.1'
+    }
+}

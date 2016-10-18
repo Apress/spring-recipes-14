@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <util:constant id="aaa"
+        static-field="com.apress.springrecipes.shop.Product.AAA" />
+
+    <util:constant id="cdrw"
+        static-field="com.apress.springrecipes.shop.Product.CDRW" />
+
+    <util:constant id="dvdrw"
+        static-field="com.apress.springrecipes.shop.Product.DVDRW" />
+
+
+    <bean id="shoppingCart" class="com.apress.springrecipes.shop.ShoppingCart" scope="prototype" />
+
+</beans>

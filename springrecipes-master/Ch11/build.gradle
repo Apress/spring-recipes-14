@@ -1,0 +1,124 @@
+description='Spring Recipes :: Chapter 11 :: Spring Transaction Management'
+
+subprojects { subproject ->
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'org.apache.derby', name: 'derby', version: "$derbyVersion"
+        compile group: 'org.apache.derby', name: 'derbyclient', version: "$derbyVersion"
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.bookshop.Main")
+    }
+}
+
+
+project(':Ch11:Recipe_11_5_i') {
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_6_i') {
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_6_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_6_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_7_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_7_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_7_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_8_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_8_ii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_8_iii') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_8_iv') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_8_v') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_9_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_10_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}
+
+project(':Ch11:Recipe_11_11_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aspects', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-instrument', version:"$springVersion"
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+    }
+}

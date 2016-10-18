@@ -1,0 +1,34 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/lang
+        http://www.springframework.org/schema/lang/spring-lang-3.2.xsd">
+
+  <bean id="rateCalculator"
+	class="com.apress.springrecipes.interest.FixedRateCalculator">
+    <property name="rate" value="0.05" />
+  </bean>
+
+  <lang:bsh id="interestCalculator"
+    script-interfaces="com.apress.springrecipes.interest.InterestCalculator">
+    <lang:inline-script>
+    <![CDATA[
+    import com.apress.springrecipes.interest.RateCalculator;
+
+    RateCalculator rateCalculator;
+
+    void setRateCalculator(RateCalculator aRateCalculator) {
+        rateCalculator = aRateCalculator;
+    }
+
+    double calculate(double amount, double year) {
+        return amount * year * rateCalculator.getAnnualRate();
+    }
+    ]]>
+    </lang:inline-script>
+    <lang:property name="rateCalculator" ref="rateCalculator" />
+  </lang:bsh>
+
+</beans>

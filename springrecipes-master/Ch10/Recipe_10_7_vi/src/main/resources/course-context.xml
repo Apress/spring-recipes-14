@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
+        <property name="url" value="jdbc:derby://localhost:1527/course;create=true" />
+        <property name="username" value="app" />
+        <property name="password" value="app" />
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan" value="com.apress.springrecipes.course" />
+        <property name="dataSource" ref="dataSource" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="databasePlatform" value="org.hibernate.dialect.DerbyTenSevenDialect" />
+                <property name="showSql" value="true" />
+                <property name="generateDdl" value="true" />
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="courseDao" class="com.apress.springrecipes.course.JpaCourseDao">
+        <constructor-arg ref="entityManagerFactory" />
+    </bean>
+    
+</beans>

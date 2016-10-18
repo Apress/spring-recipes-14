@@ -1,0 +1,461 @@
+description = 'Spring Recipes :: Chapter 14 :: Spring Enterprise Integration'
+
+subprojects { subproject ->
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-core', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-expression', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-beans', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+    	compile group: 'org.springframework', name: 'spring-context-support', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-aop', version:"$springVersion"
+	    compile group: 'aopalliance', name: 'aopalliance', version:'1.0'           
+    }
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.replicator.Main")
+    }
+}
+
+// Define 15_3_i project
+project(':Ch14:Recipe_14_3_i') {   
+   // Define how to build final JAR for project
+   jar {
+     manifest.attributes("Main-Class": "com.apress.springrecipes.replicator.Client")
+   }
+} // End 15_3_i project 
+
+// Define 15_3_ii project
+project(':Ch14:Recipe_14_3_ii') {   
+  // Define dependencies
+  dependencies {
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     manifest.attributes("Main-Class": "com.apress.springrecipes.replicator.Client")
+   }
+} // End 15_3_ii project 
+
+// Define 15_4_i project
+project(':Ch14:Recipe_14_4_i') {   
+  dependencies {
+    compile group: 'javax.mail', name: 'mail', version: "$javaMailVersion"
+   }
+} // End 15_4_i project 
+
+
+// Define 15_4_ii project
+project(':Ch14:Recipe_14_4_ii') {   
+  dependencies {
+    compile group: 'javax.mail', name: 'mail', version: "$javaMailVersion"
+   }
+   // Define how to build final JAR for project
+} // End 15_4_ii project 
+
+
+// Define 15_4_iii project
+project(':Ch14:Recipe_14_4_iii') {   
+  dependencies {
+    compile group: 'javax.mail', name: 'mail', version: "$javaMailVersion"
+   }
+   // Define how to build final JAR for project
+} // End 15_4_iii project 
+
+
+
+// Define 15_4_iv project
+project(':Ch14:Recipe_14_4_iv') {   
+  dependencies {
+    compile group: 'javax.mail', name: 'mail', version: "$javaMailVersion"
+   }
+} // End 15_4_iv project 
+
+
+// Define 15_4_v project
+project(':Ch14:Recipe_14_4_v') {   
+  dependencies {
+    compile group: 'javax.mail', name: 'mail', version: "$javaMailVersion"
+   }
+} // End 15_4_v project 
+
+
+// Define 15_5_i project
+project(':Ch14:Recipe_14_5_i') {   
+  dependencies {
+    compile group: 'org.quartz-scheduler', name: 'quartz', version:"$quartzVersion"   
+   }
+} // End 15_5_i
+
+// Define 15_5_ii project
+project(':Ch14:Recipe_14_5_ii') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.quartz-scheduler', name: 'quartz', version:"$quartzVersion"   
+   }
+   // Define how to build final JAR for project
+} // End 15_5_ii
+
+
+// Define 15_5_iii project
+project(':Ch14:Recipe_14_5_iii') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-tx', version:"$springVersion"
+    compile group: 'org.quartz-scheduler', name: 'quartz', version:"$quartzVersion"   
+   }
+   // Define how to build final JAR for project
+} // End 15_5_iii
+
+// Define 15_5_iv project
+project(':Ch14:Recipe_14_5_iv') {   
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-tx', version:"$springVersion"
+    compile group: 'org.quartz-scheduler', name: 'quartz', version:"$quartzVersion"   
+   }
+} // End 15_5_iv
+
+// Define 15_6_i project
+project(':Ch14:Recipe_14_6_i') {   
+  dependencies {
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }   
+} // End 15_6_i
+
+// Define 15_6_ii project
+project(':Ch14:Recipe_14_6_ii') {   
+  // Define dependencies
+  dependencies {
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+} // End 15_6_ii
+
+
+// Define 15_7_Client project
+project(':Ch14:Recipe_14_7_Client') {   
+  // Define dependencies
+  dependencies {
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.RmiClient")
+   }
+} // End 15_7_Client project 
+
+// Define 15_7_Server project
+project(':Ch14:Recipe_14_7_Server') {   
+  // Define dependencies
+  dependencies {
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.RmiServer")
+   }
+} // End 15_7_Server project 
+
+// Define 15_8_Burlap_Server
+project(':Ch14:Recipe_14_8_Burlap_Server') {
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='burlap.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'com.caucho', name: 'hessian', version:"$hessianVersion"
+   }
+} // End 15_8_Burlap_Server
+
+
+// Define 15_8_Burlap_Client project
+project(':Ch14:Recipe_14_8_Burlap_Client') {   
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'com.caucho', name: 'hessian', version:"$hessianVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.BurlapClient")
+    }
+} // End 15_8_Burlap_Client project 
+
+
+// Define 15_8_Hessian_Server
+project(':Ch14:Recipe_14_8_Hessian_Server') {
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='hessian.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'com.caucho', name: 'hessian', version:"$hessianVersion"
+   }
+} // End 15_8_Hessian_Server
+
+
+// Define 15_8_Hessian_Client project
+project(':Ch14:Recipe_14_8_Hessian_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'com.caucho', name: 'hessian', version:"$hessianVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.HessianClient")
+    }
+} // End 15_8_Hessian_Client project 
+
+
+// Define 15_8_HTTPInvoker_Server
+project(':Ch14:Recipe_14_8_HTTPInvoker_Server') {
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='httpinvoker.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+   }
+} // End 15_8_HTTPInvoker_Server
+
+
+// Define 15_8_HTTPInvoker_Client project
+project(':Ch14:Recipe_14_8_HTTPInvoker_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.HTTPInvokerClient")
+   }
+} // End 15_8_HTTPInvoker_Client project 
+
+
+// Define 15_9_JDK_Server project
+project(':Ch14:Recipe_14_9_JDK_Server') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.JaxWsServer")
+   }
+} // End 15_9_JDK_Server project 
+
+
+// Define 15_9_CXF_Server project
+project(':Ch14:Recipe_14_9_CXF_Server') {   
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='jaxws.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version:"$apacheCxfVersion"
+   }
+} // End 15_9_CXF_Server project 
+
+// Define 15_9_CXF_Client project
+project(':Ch14:Recipe_14_9_CXF_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-core', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-bindings-soap', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-api', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-simple', version:"$apacheCxfVersion"
+    compile group: 'org.apache.cxf', name: 'cxf-common-utilities', version:'2.5.10'
+    compile group: 'org.apache.cxf', name: 'cxf-rt-databinding-jaxb', version:"$apacheCxfVersion"            
+    compile group: 'org.apache.ws.xmlschema', name: 'xmlschema-core', version:'2.0.3'                      
+    compile group: 'org.codehaus.woodstox', name: 'woodstox-core-lgpl', version:'4.2.0'
+    compile group: 'org.codehaus.woodstox', name: 'stax2-api', version:'3.1.3'
+    compile group: 'wsdl4j', name: 'wsdl4j', version:"$wsdl4jVersion" 
+  }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.JaxWsInvokerClient")
+   }
+} // End 15_9_CXF_Client project 
+
+
+// Define 15_9_SpringJaxWs_Client
+project(':Ch14:Recipe_14_9_SpringJaxWs_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.JaxWsInvokerClient")
+   }
+} // End 15_9_SpringJaxWs_Client project 
+
+
+// Define 15_11_SpringWS_Server project
+project(':Ch14:Recipe_14_11_SpringWS_Server') {   
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='springws.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+
+    compile group: 'org.springframework.ws', name: 'spring-ws-core', version:"$springWsVersion"
+    compile group: 'org.springframework.ws', name: 'spring-xml', version:"$springWsVersion"
+    compile group: 'wsdl4j', name: 'wsdl4j', version: "$wsdl4jVersion"
+    compile group: 'dom4j', name: 'dom4j', version:'1.6.1'
+    compile group: 'jaxen', name: 'jaxen', version:'1.1.4'            
+   }
+} // End 15_11_SpringWS_Server project 
+
+
+// Define 15_11_SpringWS_Client
+project(':Ch14:Recipe_14_11_SpringWS_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'org.springframework.ws', name: 'spring-ws-core', version:"$springWsVersion"	
+    compile group: 'org.springframework.ws', name: 'spring-xml', version:"$springWsVersion"
+    compile group: 'dom4j', name: 'dom4j', version:'1.6.1'
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.SpringWSInvokerClient")
+   }
+} // End 15_11_SpringWS_Client project 
+
+
+// Define 15_12_SpringWS_Server project
+project(':Ch14:Recipe_14_12_SpringWS_Server') {   
+   // Define usage of war plugin
+   apply plugin: 'war'
+   // Define defaulttasks, first clean, then build, then war
+   defaultTasks 'clean','build','war'
+   // Define dependencies
+   war {
+       archiveName='springws.war'
+      }	
+   dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+
+    compile group: 'org.springframework.ws', name: 'spring-ws-core', version:"$springWsVersion"
+    compile group: 'org.springframework.ws', name: 'spring-xml', version:"$springWsVersion"
+    compile group: 'wsdl4j', name: 'wsdl4j', version: "$wsdl4jVersion"
+    compile group: 'dom4j', name: 'dom4j', version:'1.6.1'
+    compile group: 'jaxen', name: 'jaxen', version:'1.1.4'
+    compile group: 'org.codehaus.castor', name:'castor-xml', version:"$castorVersion"
+	compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+            
+   }
+} // End 15_12_SpringWS_Server project 
+
+
+// Define 15_12_SpringWS_Client
+project(':Ch14:Recipe_14_12_SpringWS_Client') {   
+  // Define defaultTasks, first clean then build for springintro
+  defaultTasks 'clean', 'build'
+  // Define dependencies
+  dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjtools',version:"$aspectjVersion"
+    compile group: 'org.springframework.ws', name: 'spring-ws-core', version:"$springWsVersion"	
+    compile group: 'org.springframework.ws', name: 'spring-xml', version:"$springWsVersion"	  
+    compile group: 'dom4j', name: 'dom4j', version:'1.6.1'
+    compile group: 'org.codehaus.castor', name:'castor-xml', version:"$castorVersion"
+    compile group: 'org.codehaus.castor', name:'castor-core', version:"$castorVersion"
+    compile group: 'commons-lang', name: 'commons-lang', version:"$commonsLangVersion"   
+   }
+   // Define how to build final JAR for project
+   jar {
+     //The following creates a fat-JAR with all dependencies embedded 
+     // from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+     //Instead use custom task to copy files to lib directory and create a custom manfiest
+     manifest.attributes("Main-Class": "com.apress.springrecipes.weather.SpringWSInvokerClient")
+   }
+} // End 15_12_SpringWS_Client project 

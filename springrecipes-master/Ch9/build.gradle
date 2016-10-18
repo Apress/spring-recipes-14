@@ -1,0 +1,52 @@
+description='Spring Recipes :: Chapter 9 :: Spring with other Web Frameworks'
+
+subprojects { subproject ->
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build', 'test', 'war'
+
+    war {
+        archiveName = 'city.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.1'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.1'
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+    }
+}
+
+// Define springweb project
+project(':Ch9:Recipe_9_3_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.sun.faces', name: 'jsf-api', version: "$jsfVersion"
+        compile group: 'com.sun.faces', name: 'jsf-impl', version: "$jsfVersion"
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch9:Recipe_9_3_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.sun.faces', name: 'jsf-api', version: "$jsfVersion"
+        compile group: 'com.sun.faces', name: 'jsf-impl', version: "$jsfVersion"
+    }
+} // End springweb
+
+// Define springweb project
+project(':Ch9:Recipe_9_4_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.directwebremoting', name: 'dwr', version: "$dwrVersion"
+    }
+} // End springweb
+
+project(':Ch9:Recipe_9_4_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'org.directwebremoting', name: 'dwr', version: "$dwrVersion"
+    }
+} // End springweb

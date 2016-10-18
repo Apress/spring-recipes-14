@@ -1,0 +1,179 @@
+include 'Ch1:springintro'
+
+include 'Ch2:Recipe_2_1','Ch2:Recipe_2_2_i',\
+        'Ch2:Recipe_2_2_ii','Ch2:Recipe_2_2_iii',\
+        'Ch2:Recipe_2_3_i','Ch2:Recipe_2_3_ii','Ch2:Recipe_2_3_iii','Ch2:Recipe_2_3_iv','Ch2:Recipe_2_3_v',\
+        'Ch2:Recipe_2_4_i','Ch2:Recipe_2_4_ii','Ch2:Recipe_2_4_iii','Ch2:Recipe_2_4_iv','Ch2:Recipe_2_4_v','Ch2:Recipe_2_4_vi','Ch2:Recipe_2_4_vii',\
+        'Ch2:Recipe_2_5_i','Ch2:Recipe_2_5_ii',\
+        'Ch2:Recipe_2_6_i','Ch2:Recipe_2_6_ii',\
+        'Ch2:Recipe_2_7',\
+        'Ch2:Recipe_2_8_i',\
+        'Ch2:Recipe_2_8_ii','Ch2:Recipe_2_8_iii',\
+        'Ch2:Recipe_2_9',\
+        'Ch2:Recipe_2_10_i','Ch2:Recipe_2_10_ii',\
+        'Ch2:Recipe_2_10_iii','Ch2:Recipe_2_11',\
+        'Ch2:Recipe_2_12',\
+        'Ch2:Recipe_2_13_i','Ch2:Recipe_2_13_ii','Ch2:Recipe_2_13_iii','Ch2:Recipe_2_13_iv',\
+        'Ch2:Recipe_2_14',\
+        'Ch2:Recipe_2_15_i','Ch2:Recipe_2_15_ii',\
+        'Ch2:Recipe_2_16_i','Ch2:Recipe_2_16_ii','Ch2:Recipe_2_16_iii',\
+        'Ch2:Recipe_2_17_i','Ch2:Recipe_2_17_ii','Ch2:Recipe_2_17_iii','Ch2:Recipe_2_17_iv',\
+        'Ch2:Recipe_2_18_i','Ch2:Recipe_2_18_ii','Ch2:Recipe_2_18_iii',\
+        'Ch2:Recipe_2_19_i','Ch2:Recipe_2_19_ii','Ch2:Recipe_2_19_iii',\
+        'Ch2:Recipe_2_20_i','Ch2:Recipe_2_20_ii','Ch2:Recipe_2_20_iii',\
+        'Ch2:Recipe_2_21_i','Ch2:Recipe_2_21_ii','Ch2:Recipe_2_21_iii',\
+        'Ch2:Recipe_2_22_i','Ch2:Recipe_2_22_ii'
+
+include 'Ch3:Recipe_3_1_i','Ch3:Recipe_3_1_ii','Ch3:Recipe_3_1_iii',\
+        'Ch3:Recipe_3_2','Ch3:Recipe_3_3_i','Ch3:Recipe_3_3_ii','Ch3:Recipe_3_3_iii','Ch3:Recipe_3_3_iv','Ch3:Recipe_3_3_v','Ch3:Recipe_3_3_vi','Ch3:Recipe_3_3_vii',\
+        'Ch3:Recipe_3_4_i','Ch3:Recipe_3_4_ii',\
+        'Ch3:Recipe_3_5_i','Ch3:Recipe_3_5_ii',\
+        'Ch3:Recipe_3_6_i','Ch3:Recipe_3_6_ii',
+        'Ch3:Recipe_3_7',
+        'Ch3:Recipe_3_8_i','Ch3:Recipe_3_8_ii','Ch3:Recipe_3_8_iii','Ch3:Recipe_3_8_iv',\
+        'Ch3:Recipe_3_9_i','Ch3:Recipe_3_9_ii','Ch3:Recipe_3_9_iii','Ch3:Recipe_3_9_iv',\
+        'Ch3:Recipe_3_10_i','Ch3:Recipe_3_10_ii','Ch3:Recipe_3_10_iii',\
+        'Ch3:Recipe_3_11',\
+        'Ch3:Recipe_3_12_i','Ch3:Recipe_3_12_ii','Ch3:Recipe_3_12_iii','Ch3:Recipe_3_12_iv','Ch3:Recipe_3_12_v',\
+        'Ch3:Recipe_3_13',\
+        'Ch3:Recipe_3_14_i','Ch3:Recipe_3_14_ii',\
+        'Ch3:Recipe_3_15_i','Ch3:Recipe_3_15_ii',\
+        'Ch3:Recipe_3_16_i','Ch3:Recipe_3_16_ii','Ch3:Recipe_3_16_iii','Ch3:Recipe_3_16_iv',\
+        'Ch3:Recipe_3_17',\
+        'Ch3:Recipe_3_18',\
+        'Ch3:Recipe_3_19_i','Ch3:Recipe_3_19_ii','Ch3:Recipe_3_19_iii',\
+        'Ch3:Recipe_3_20',\
+        'Ch3:Recipe_3_21',\
+        'Ch3:Recipe_3_22_i','Ch3:Recipe_3_22_ii'
+
+include 'Ch4:Recipe_4_1_i','Ch4:Recipe_4_1_ii','Ch4:Recipe_4_1_iii',\
+        'Ch4:Recipe_4_2_i','Ch4:Recipe_4_2_ii','Ch4:Recipe_4_2_iii',\
+        'Ch4:Recipe_4_3_i','Ch4:Recipe_4_3_ii','Ch4:Recipe_4_3_iii',\
+        'Ch4:Recipe_4_4_i',\
+        'Ch4:Recipe_4_5_i',\
+        'Ch4:Recipe_4_6_i','Ch4:Recipe_4_6_ii','Ch4:Recipe_4_6_iii',\
+        'Ch4:Recipe_4_7_i',\
+        'Ch4:Recipe_4_8_i','Ch4:Recipe_4_8_ii','Ch4:Recipe_4_8_iii',\
+        'Ch4:Recipe_4_9_i','Ch4:Recipe_4_9_ii','Ch4:Recipe_4_9_iii','Ch4:Recipe_4_9_iv',\
+        'Ch4:Recipe_4_10_i',\
+        'Ch4:Recipe_4_11_i'
+
+include 'Ch5:Recipe_5_1_i','Ch5:Recipe_5_1_ii','Ch5:Recipe_5_1_iii','Ch5:Recipe_5_1_iv','Ch5:Recipe_5_1_v',\
+        'Ch5:Recipe_5_2_i','Ch5:Recipe_5_2_ii','Ch5:Recipe_5_2_iii',\
+        'Ch5:Recipe_5_3_i','Ch5:Recipe_5_3_ii','Ch5:Recipe_5_3_iii',\
+        'Ch5:Recipe_5_4_i'
+
+include 'Ch6:Recipe_6_1_i',\
+        'Ch6:Recipe_6_2_i','Ch6:Recipe_6_2_ii',\
+        'Ch6:Recipe_6_3_i',\
+        'Ch6:Recipe_6_4_i','Ch6:Recipe_6_4_ii',\
+        'Ch6:Recipe_6_5_i',\
+        'Ch6:Recipe_6_6_i',\
+        'Ch6:Recipe_6_7_i','Ch6:Recipe_6_7_ii'
+
+
+include 'Ch7:Recipe_7_1_i','Ch7:Recipe_7_1_ii','Ch7:Recipe_7_1_iii',\
+        'Ch7:Recipe_7_2_i',\
+        'Ch7:Recipe_7_3_i','Ch7:Recipe_7_3_ii',\
+        'Ch7:Recipe_7_4_i','Ch7:Recipe_7_4_ii','Ch7:Recipe_7_4_iii','Ch7:Recipe_7_4_iv','Ch7:Recipe_7_4_v',\
+        'Ch7:Recipe_7_6_i',\
+        'Ch7:Recipe_7_7_i','Ch7:Recipe_7_7_ii'
+
+include 'Ch8:Recipe_8_1_i',\
+        'Ch8:Recipe_8_2_i','Ch8:Recipe_8_2_ii',\
+        'Ch8:Recipe_8_3_i','Ch8:Recipe_8_3_ii',\
+        'Ch8:Recipe_8_4_i','Ch8:Recipe_8_4_ii','Ch8:Recipe_8_4_iii',\
+        'Ch8:Recipe_8_5_i'
+
+include 'Ch9:Recipe_9_1_i','Ch9:Recipe_9_1_ii','Ch9:Recipe_9_1_iii',\
+        'Ch9:Recipe_9_2_i','Ch9:Recipe_9_2_ii',\
+        'Ch9:Recipe_9_3_i','Ch9:Recipe_9_3_ii',\
+        'Ch9:Recipe_9_4_i','Ch9:Recipe_9_4_ii'
+
+
+include 'Ch10:Recipe_10_0_i','Ch10:Recipe_10_0_ii','Ch10:Recipe_10_0_iii','Ch10:Recipe_10_0_iv',\
+        'Ch10:Recipe_10_1_i','Ch10:Recipe_10_1_ii','Ch10:Recipe_10_1_iii','Ch10:Recipe_10_1_iv','Ch10:Recipe_10_1_v',\
+        'Ch10:Recipe_10_2_i','Ch10:Recipe_10_2_ii','Ch10:Recipe_10_2_iii','Ch10:Recipe_10_2_iv','Ch10:Recipe_10_2_v','Ch10:Recipe_10_2_vi',\
+        'Ch10:Recipe_10_3_i','Ch10:Recipe_10_3_ii',\
+        'Ch10:Recipe_10_4_i','Ch10:Recipe_10_4_ii','Ch10:Recipe_10_4_iii','Ch10:Recipe_10_4_iv',\
+        'Ch10:Recipe_10_5_i','Ch10:Recipe_10_5_ii','Ch10:Recipe_10_5_iii',\
+        'Ch10:Recipe_10_6_i','Ch10:Recipe_10_6_ii','Ch10:Recipe_10_6_iii','Ch10:Recipe_10_6_iv',\
+        'Ch10:Recipe_10_7_i','Ch10:Recipe_10_7_ii','Ch10:Recipe_10_7_iii','Ch10:Recipe_10_7_iv','Ch10:Recipe_10_7_v','Ch10:Recipe_10_7_vi',\
+        'Ch10:Recipe_10_8_i','Ch10:Recipe_10_8_ii',\
+        'Ch10:Recipe_10_9_i','Ch10:Recipe_10_9_ii','Ch10:Recipe_10_9_iii',\
+        'Ch10:Recipe_10_10_i','Ch10:Recipe_10_10_ii',\
+        'Ch10:Recipe_10_11'
+
+include 'Ch11:Recipe_11_1_i','Ch11:Recipe_11_1_ii',\
+        'Ch11:Recipe_11_3_i',\
+        'Ch11:Recipe_11_4_i','Ch11:Recipe_11_4_ii',\
+        'Ch11:Recipe_11_5_i',\
+        'Ch11:Recipe_11_6_i','Ch11:Recipe_11_6_ii','Ch11:Recipe_11_6_iii',\
+        'Ch11:Recipe_11_7_i','Ch11:Recipe_11_7_ii','Ch11:Recipe_11_7_iii',\
+        'Ch11:Recipe_11_8_i','Ch11:Recipe_11_8_ii','Ch11:Recipe_11_8_iii','Ch11:Recipe_11_8_iv','Ch11:Recipe_11_8_v',\
+        'Ch11:Recipe_11_9_i',\
+        'Ch11:Recipe_11_10_i',\
+        'Ch11:Recipe_11_11_i'
+
+include 'Ch12:Recipe_12_1_i','Ch12:Recipe_12_1_ii','Ch12:Recipe_12_1_iii','Ch12:Recipe_12_1_iv',\
+        'Ch12:Recipe_12_2_i','Ch12:Recipe_12_2_ii',\
+        'Ch12:Recipe_12_3',\
+        'Ch12:Recipe_12_4_i','Ch12:Recipe_12_4_ii',\
+        'Ch12:Recipe_12_5_i','Ch12:Recipe_12_5_ii',\
+        'Ch12:Recipe_12_6_i','Ch12:Recipe_12_6_ii','Ch12:Recipe_12_6_iii',\
+        'Ch12:Recipe_12_7_i', 'Ch12:Recipe_12_7_ii',\
+        'Ch12:Recipe_12_8_i','Ch12:Recipe_12_8_ii','Ch12:Recipe_12_8_iii','Ch12:Recipe_12_8_iv',\
+        'Ch12:Recipe_12_9'
+
+include 'Ch13:Recipe_13_1_i','Ch13:Recipe_13_1_ii','Ch13:Recipe_13_1_iii','Ch13:Recipe_13_1_iv','Ch13:Recipe_13_1_v',\
+        'Ch13:Recipe_13_2_i','Ch13:Recipe_13_2_ii','Ch13:Recipe_13_2_iii','Ch13:Recipe_13_2_iv','Ch13:Recipe_13_2_v','Ch13:Recipe_13_2_vi',\
+        'Ch13:Recipe_13_3_i','Ch13:Recipe_13_3_ii',\
+        'Ch13:Recipe_13_4_i','Ch13:Recipe_13_4_ii','Ch13:Recipe_13_4_iii','Ch13:Recipe_13_4_iv','Ch13:Recipe_13_4_v','Ch13:Recipe_13_4_vi'
+
+
+include 'Ch14:Recipe_14_1_i','Ch14:Recipe_14_1_ii','Ch14:Recipe_14_1_iii','Ch14:Recipe_14_1_iv','Ch14:Recipe_14_1_v','Ch14:Recipe_14_1_vi','Ch14:Recipe_14_1_vii','Ch14:Recipe_14_1_viii',\
+        'Ch14:Recipe_14_2_i','Ch14:Recipe_14_2_ii','Ch14:Recipe_14_2_iii',\
+        'Ch14:Recipe_14_3_i','Ch14:Recipe_14_3_ii',\
+        'Ch14:Recipe_14_4_i','Ch14:Recipe_14_4_ii','Ch14:Recipe_14_4_iii','Ch14:Recipe_14_4_iv','Ch14:Recipe_14_4_v',\
+        'Ch14:Recipe_14_5_i','Ch14:Recipe_14_5_ii','Ch14:Recipe_14_5_iii','Ch14:Recipe_14_5_iv',\
+        'Ch14:Recipe_14_6_i','Ch14:Recipe_14_6_ii',\
+        'Ch14:Recipe_14_7_Client','Ch14:Recipe_14_7_Server',\
+        'Ch14:Recipe_14_8_Burlap_Server','Ch14:Recipe_14_8_Burlap_Client','Ch14:Recipe_14_8_Hessian_Server','Ch14:Recipe_14_8_Hessian_Client','Ch14:Recipe_14_8_HTTPInvoker_Server','Ch14:Recipe_14_8_HTTPInvoker_Client',\
+        'Ch14:Recipe_14_9_JDK_Server','Ch14:Recipe_14_9_CXF_Server','Ch14:Recipe_14_9_CXF_Client','Ch14:Recipe_14_9_SpringJaxWs_Client',\
+        'Ch14:Recipe_14_11_SpringWS_Server','Ch14:Recipe_14_11_SpringWS_Client',\
+        'Ch14:Recipe_14_12_SpringWS_Server','Ch14:Recipe_14_12_SpringWS_Client'
+
+include 'Ch15:Recipe_15_1_i_FrontDesk','Ch15:Recipe_15_1_i_BackOffice','Ch15:Recipe_15_1_ii_FrontDesk','Ch15:Recipe_15_1_ii_BackOffice','Ch15:Recipe_15_1_iii_FrontDesk','Ch15:Recipe_15_1_iii_BackOffice','Ch15:Recipe_15_1_iv_FrontDesk','Ch15:Recipe_15_1_iv_BackOffice',\
+        'Ch15:Recipe_15_2_i_FrontDesk','Ch15:Recipe_15_2_i_BackOffice','Ch15:Recipe_15_2_ii_FrontDesk','Ch15:Recipe_15_2_ii_BackOffice',\
+        'Ch15:Recipe_15_3_FrontDesk','Ch15:Recipe_15_3_BackOffice',\
+        'Ch15:Recipe_15_4_i_FrontDesk','Ch15:Recipe_15_4_i_BackOffice','Ch15:Recipe_15_4_ii_FrontDesk','Ch15:Recipe_15_4_ii_BackOffice','Ch15:Recipe_15_4_iii_FrontDesk','Ch15:Recipe_15_4_iii_BackOffice','Ch15:Recipe_15_4_iv_FrontDesk','Ch15:Recipe_15_4_iv_BackOffice','Ch15:Recipe_15_4_v_FrontDesk','Ch15:Recipe_15_4_v_BackOffice',\
+        'Ch15:Recipe_15_5_FrontDesk','Ch15:Recipe_15_5_BackOffice',\
+        'Ch15:Recipe_15_6_FrontDesk','Ch15:Recipe_15_6_BackOffice'
+
+include 'Ch16:Recipe_16_2_i','Ch16:Recipe_16_2_ii',\
+        'Ch16:Recipe_16_3_i','Ch16:Recipe_16_3_ii','Ch16:Recipe_16_3_iii',\
+        'Ch16:Recipe_16_4_i',\
+        'Ch16:Recipe_16_5_i','Ch16:Recipe_16_5_ii',\
+        'Ch16:Recipe_16_6_i','Ch16:Recipe_16_6_ii','Ch16:Recipe_16_6_iii',
+        'Ch16:Recipe_16_7_i','Ch16:Recipe_16_7_ii',
+        'Ch16:Recipe_16_9',
+        'Ch16:Recipe_16_10_i','Ch16:Recipe_16_10_ii'
+
+include 'Ch17:Recipe_17_1_i','Ch17:Recipe_17_1_ii','Ch17:Recipe_17_1_iii',\
+        'Ch17:Recipe_17_2_i','Ch17:Recipe_17_2_ii','Ch17:Recipe_17_2_iii','Ch17:Recipe_17_2_iv',\
+        'Ch17:Recipe_17_3_i',\
+        'Ch17:Recipe_17_4_i','Ch17:Recipe_17_4_ii','Ch17:Recipe_17_4_iii',\
+        'Ch17:Recipe_17_5_i','Ch17:Recipe_17_5_ii','Ch17:Recipe_17_5_iii',\
+        'Ch17:Recipe_17_6_i','Ch17:Recipe_17_6_ii','Ch17:Recipe_17_6_iii',\
+        'Ch17:Recipe_17_7_i','Ch17:Recipe_17_7_ii',\
+        'Ch17:Recipe_17_8_i','Ch17:Recipe_17_8_ii'
+        
+include 'Appendix_A:Recipe_A_2_i',\
+        'Appendix_A:Recipe_A_3_i','Appendix_A:Recipe_A_3_ii','Appendix_A:Recipe_A_3_iii'
+
+include 'Appendix_B:Recipe_B_1_i','Appendix_B:Recipe_B_1_ii','Appendix_B:Recipe_B_1_iii','Appendix_B:Recipe_B_1_iv',\
+        'Appendix_B:Recipe_B_2_i','Appendix_B:Recipe_B_2_ii',\
+        'Appendix_B:Recipe_B_3_i','Appendix_B:Recipe_B_3_ii',\
+        'Appendix_B:Recipe_B_4_i',\
+        'Appendix_B:Recipe_B_5_i','Appendix_B:Recipe_B_5_ii','Appendix_B:Recipe_B_5_iii','Appendix_B:Recipe_B_5_iv','Appendix_B:Recipe_B_5_v',\
+        'Appendix_B:Recipe_B_6_i','Appendix_B:Recipe_B_6_ii'

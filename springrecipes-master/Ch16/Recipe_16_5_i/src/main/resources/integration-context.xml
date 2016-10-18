@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.springframework.org/schema/integration"
+             xmlns:jms="http://www.springframework.org/schema/integration/jms"
+             xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+                http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd">
+
+    <beans:bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <beans:property name="targetConnectionFactory">
+            <beans:bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <beans:property name="brokerURL" value="tcp://localhost:61616"/>
+            </beans:bean>
+        </beans:property>
+        <beans:property name="sessionCacheSize" value="10"/>
+        <beans:property name="cacheProducers" value="false"/>
+    </beans:bean>
+
+    <beans:bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <beans:property name="connectionFactory" ref="connectionFactory"/>
+    </beans:bean>
+
+    <beans:bean id="inboundJMSMessageToCustomerTransformer"
+                class="com.apress.springrecipes.springintegration.InboundJMSMessageToCustomerTransformer"/>
+
+    <beans:bean id="inboundCustomerServiceActivator"
+    class="com.apress.springrecipes.springintegration.InboundCustomerServiceActivator"/>
+    <channel id="inboundHelloJMSMessageChannel"/>
+    <channel id="inboundCustomerChannel"/>
+    <jms:message-driven-channel-adapter channel="inboundHelloJMSMessageChannel"
+                                        extract-payload="true" connection-factory="connectionFactory"
+                                        destination-name="solution015"/>
+
+    <transformer input-channel="inboundHelloJMSMessageChannel"
+                 ref="inboundJMSMessageToCustomerTransformer"
+                 output-channel="inboundCustomerChannel"/>
+
+    <service-activator input-channel="inboundCustomerChannel" ref="inboundCustomerServiceActivator"/>
+
+
+</beans:beans>

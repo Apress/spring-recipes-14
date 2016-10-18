@@ -1,0 +1,27 @@
+description='Spring Recipes :: Chapter 8 :: Spring Mobile'
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean','build','war'
+    // Define dependencies
+    war {
+        archiveName='mobile.war'
+    }
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
+        compile group: 'org.springframework.mobile', name: 'spring-mobile-device', version:"$springMobileVersion"
+
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.1'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.1'
+
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+
+
+}
+
